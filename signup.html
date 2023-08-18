@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+
+    <style>
+
+        body {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: xx-large;
+            margin-top: 20px;
+        }
+
+        span {
+            color: gray;
+            margin-right: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: orange;
+            font-size: 14px;
+            font-family: sans-serif;
+            font-weight: bold;
+        }
+
+        .inp {
+            width: 360px;
+            height: 30px;
+            border-radius: 7px;
+            border: none;
+            border: 2px solid rgb(214, 214, 214);
+            margin-top: -22px;
+            margin-bottom: 20px;
+            /* padding-bottom: 30px; */
+        }
+
+        .btn {
+            width: 80px;
+            height: 60px;
+            margin-top: 20px;
+            background-color: rgb(255, 123, 0);
+            color: #fff;
+            font-size: 14px;
+        }
+
+        #p {
+            margin-right: 310px;
+            margin-top: 40px;
+            color: rgb(66, 66, 66);
+            font-weight: 500;
+            font-size: large;
+        }
+
+        input::placeholder {
+            font-style: italic;
+            color: rgb(180, 180, 180);
+            font-size: 15px;
+        }
+
+        #main {
+            border: 2px solid rgb(244, 243, 243);
+            width: 500px;
+            height: 510px;
+            border-radius: 35px;
+            box-shadow: 3px 6px 10px 4px rgba(164, 149, 149, 0.858);
+            background-color: white;
+        }
+    
+    </style>
+
+</head>
+
+<body>
+
+    <center>
+
+        <div id="main">
+
+            <h1>Sign Up</h1>
+
+            <h1>Create up your account</h1>
+
+            <!-- <span> Or </span><a href="./signup.html">Create a new one</a> <br> -->
+
+            <form>
+                Name:
+                <input type="text" class="inp" id="name" placeholder="Enter Name" required="required"><br>
+
+                Phone No:
+                <input type="text" class="inp" id="phone" placeholder="Enter Phone No" required="required"><br>
+
+                Email:
+                <input type="email" class="inp" id="email" placeholder="Enter Email" required="required"><br>
+
+                Password:
+                <input type="password" class="inp" id="password" placeholder="Enter Password" required="required"><br>
+
+                Address:
+                <input type="text" class="inp" id="address" placeholder="Enter Address" required="required"><br>
+
+                Country:
+                <input type="text" class="inp" id="country" placeholder="Enter Country" required="required"><br>
+
+
+                <button id="btn" type="submit" onclick="signup()">Sign Up</button><br>
+
+
+            </form>
+
+
+        </div>
+
+
+    </center>
+
+    <script type="module" src="signup.mjs">
+
+// import { initializeApp } from "https://www.gstatic.com/firebasejs/10.2.0/firebase-app.js";
+// import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.2.0/firebase-auth.js";
+// // import {app} from "./firebase.mjs";
+
+
+
+  
+//   // https://firebase.google.com/docs/web/setup#available-libraries
+
+//   // Your web app's Firebase configuration
+//   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+//   const firebaseConfig = {
+//     apiKey: "AIzaSyB-RzNx1MF098_olWGu-3nblS_p7tNdZ-0",
+//     authDomain: "hackathon19-8-2023.firebaseapp.com",
+//     projectId: "hackathon19-8-2023",
+//     storageBucket: "hackathon19-8-2023.appspot.com",
+//     messagingSenderId: "457832861614",
+//     appId: "1:457832861614:web:11f0174389d43b8bf4823f",
+//     measurementId: "G-SZLNCLGJQ1"
+//   };
+
+//   // Initialize Firebase
+//   const app = initializeApp(firebaseConfig);
+//   const auth = getAuth();
+
+// // var  btn= document.getElementById("btn")
+// function signup()
+
+// {
+ 
+//   // var name=document.getElementById("name").value
+//   var email=document.getElementById("email").value
+//   var password=document.getElementById("password").value
+//   // var phone=document.getElementById("phone").value
+//   // var address=document.getElementById("address").value
+//   // var country=document.getElementById("country").value
+  
+//   createUserWithEmailAndPassword(auth,email, password)
+//     .then((userCredential) => {
+//       // Signed in 
+//       const user = userCredential.user;
+//       console.log("user:",user)
+//       alert("User Created");
+//       window.location.href="login.html"
+//       // ...
+//     })
+//     .catch((error) => {
+//       const errorCode = error.code;
+//       const errorMessage = error.message;
+//       console.log("error",errorMessage);
+//       // ..
+//     });
+  
+
+// }
+
+
+// window.signup=signup
+
+//   export {app,auth}
+
+ 
+
+    </script>
+
+</body>
+
+</html>
