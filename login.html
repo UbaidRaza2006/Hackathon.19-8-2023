@@ -8,13 +8,36 @@
 
     <style>
         body {
-            background-color: #fff;
+            margin: 0px;
+            background-color: rgb(185, 174, 174,0.507);
+        }
+
+        #main-nav{
+            background-color: #1064e2;
+            /* width: 100%; */
+            height: 35px;
+            /* margin-top: -5px; */
+            padding-left: 130px;
+         /* padding-right: 70px; */
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+            /* padding-bottom: 10px; */
         }
 
         h1 {
             font-weight: bold;
             font-size: xx-large;
-            margin-top: 50px;
+            margin-top: 20px;
+        }
+
+        #heading-nav{
+            padding-left: 130px;
+            background-color: whitesmoke ;
+            /* margin-top: -20px;         */
+            height: 70px;
+            align-items: center;
+            display: flex;
         }
 
         span {
@@ -22,28 +45,24 @@
             margin-right: 10px;
         }
 
-        a {
-            text-decoration: none;
-            color: orange;
-            font-size: 14px;
-            font-family: sans-serif;
-            font-weight: bold;
-        }
-
         .inp {
-            width: 400px;
-            height: 40px;
+            width: 320px;
+            height: 36px;
             border-radius: 7px;
             border: none;
-            border: 1px solid rgb(214, 214, 214);
-            margin-top: -22px;
+            border: 2px solid rgb(214, 214, 214);
+            /* margin-top: -22px; */
+            margin-bottom: 20px;
+            margin-top: 8px;
+            /* padding-bottom: 30px; */
         }
 
-        .btn {
-            width: 400px;
+        #btn {
+            width: 80px;
             height: 50px;
-            margin-top: 20px;
-            background-color: orangered;
+            border-radius: 8px;
+            margin-top: -8px;
+            background-color: #1064e2;
             color: #fff;
             font-size: 14px;
         }
@@ -64,12 +83,26 @@
 
         #main {
             border: 2px solid rgb(244, 243, 243);
-            width: 450px;
-            height: 550px;
-            border-radius: 30px;
-            box-shadow: 3px 6px 10px 3px rgba(164, 149, 149, 0.858);
-            background-color: white;
+            width: 400px;
+            height: 220px;
+            border-radius: 35px;
+            box-shadow: 3px 6px 10px 4px rgba(164, 149, 149, 0.858);
+            background-color: whitesmoke;
+            margin-top: 40px;
         }
+
+        
+        a{
+            color: white;
+            font-weight: bolder;
+            font-size: 18px;
+             padding-right: 110px; 
+             text-decoration: none;
+        /* padding-left: 40px; */
+
+        }
+
+
     </style>
 
 </head>
@@ -77,36 +110,49 @@
 <body>
 
     <!-- <script type="module" src="../js/login.js"></script> -->
+    <nav id="main-nav"> <h3 style="color: white;">Personal Blogging App</h3>  <a href="./signup.html">Sign Up</a> </nav>
+
+    <nav id="heading-nav"> <h1>Log In</h1> </nav>
+
 
     <center>
 
+       
         <div id="main">
 
-            <h1>Log In</h1>
 
-            <h1>Sign in to your account</h1>
+            <!-- <span> Or </span><a href="./signup.html">Create a new one</a> <br> -->
 
-            <span>Or</span><a href="./signup.html">Create a new one</a><br>
+            <!-- <form> -->
+<!-- 
+                <input type="text" class="inp" id="fname" placeholder="Enter First Name" required="required"><br>
 
-            <div>
 
-                <p id="p">Email address</p>
-                <input type="text" class="inp" id="email" placeholder="Enter Email" required="required"><br>
+                <input type="text" class="inp" id="lname" placeholder="Enter Last Name" required="required"><br> -->
 
-                <p id="p">Password</p>
-                <input type="password" class="inp" id="password" placeholder="Enter Password" required="required"><br>
+                <input type="email" class="inp" id="email" placeholder="Enter Email" required="required"><br>
 
-                <button id="button2" class="btn" type="submit">Sign In</button><br>
-                <!-- <button class="btn">Sign in as guest</button> -->
+              
+                <input type="password"  class="inp" id="password" placeholder="Enter Password" required="required"><br>
 
-            </div>
+<!--               
+                <input type="text" class="inp" id="rpassword" placeholder="Enter Repeat Password" required="required"><br>
+ -->
+                <!-- Country:
+                <input type="text" class="inp" id="country" placeholder="Enter Country" required="required"><br> -->
+
+
+                <button id="btn" type="submit" onclick="login()">Log In</button><br>
+
+
+            <!-- </form> -->
 
 
         </div>
 
 
-
     </center>
+
 
     <script type="module">
 
@@ -114,9 +160,18 @@
         import { signInWithEmailAndPassword , onAuthStateChanged} from "https://www.gstatic.com/firebasejs/10.2.0/firebase-auth.js";
 
 
+    //     const firebaseConfig = {
+    //     apiKey: "AIzaSyB-RzNx1MF098_olWGu-3nblS_p7tNdZ-0",
+    //     authDomain: "hackathon19-8-2023.firebaseapp.com",
+    //     projectId: "hackathon19-8-2023",
+    //     storageBucket: "hackathon19-8-2023.appspot.com",
+    //     messagingSenderId: "457832861614",
+    //     appId: "1:457832861614:web:11f0174389d43b8bf4823f",
+    //     measurementId: "G-SZLNCLGJQ1"
+    //   };
         // const auth = getAuth();
 
-        var button = document.getElementById("button2").addEventListener('click', login)
+        var button = document.getElementById("btn").addEventListener('click', login)
         function login() {
 
             // var name=document.getElementById("name").value
@@ -132,6 +187,7 @@
                     const user = userCredential.user;
                     console.log(user, "User Agya");
                     alert("User Signed In");
+                    window.location.href="./dashboard.html"
 
 
                     onAuthStateChanged(auth, (user) => {
@@ -141,7 +197,7 @@
                             // const uid = user.uid;
 
                             document.getElementById("button2").innerHTML= email;
-                            window.location.href = "./index.html"
+                            // window.location.href = "./index.html"
 
                             // ...
                         } else {
